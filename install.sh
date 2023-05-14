@@ -6,3 +6,6 @@ cp -r var/* /var
 cp -r etc/* /etc
 cp -r usr/* /usr
 systemctl enable pihole.service
+systemctl enable dnscrypt-proxy.service
+systemctl start pihole.service
+systemctl start dnscrypt-proxy.service

@@ -1,0 +1,13 @@
+[Unit]
+Description=dnscrypt-proxy
+After=docker.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/dnscrypt-proxy.sh
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
