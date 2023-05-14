@@ -1,0 +1,12 @@
+[Unit]
+Description=pihole
+After=docker.service
+
+[Service]
+ExecStart=/usr/local/bin/pihole.sh
+Restart=always
+RemainAfterExit=no
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
