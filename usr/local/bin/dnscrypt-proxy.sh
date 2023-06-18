@@ -4,6 +4,7 @@ docker run --rm \
   --name dnscrypt \
   --network pihole-bridge \
   --ip 172.20.10.3 \
+  --cpu-shares 2048 \
   -p 5353:5353/udp \
   -v /etc/dnscrypt-proxy:/config \
   -v /var/dnscrypt:/var/dnscrypt \

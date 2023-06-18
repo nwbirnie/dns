@@ -12,6 +12,10 @@ fi
 cp -r etc/* /etc
 cp -r usr/* /usr
 
+mkdir -p /var/pihole
+chmod -R 755 /var/pihole
+chown -R root:root /var/pihole
+
 docker network remove pihole-bridge
 docker network create --subnet 172.20.10.0/29 pihole-bridge
 

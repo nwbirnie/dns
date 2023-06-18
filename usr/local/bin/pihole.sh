@@ -4,6 +4,7 @@ docker run --rm \
   --name pihole \
   --network pihole-bridge \
   --ip 172.20.10.2 \
+  --cpu-shares 2048 \
   -p 53:53/udp \
   -p 80:80 \
   -e TZ=Europe/London \
