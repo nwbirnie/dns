@@ -3,10 +3,16 @@ set -euox pipefail
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "${SCRIPT_DIR}"
 cp -r var/* /var
+
+if systemctl | grep pihole.service; then
+  systemctl stop pihole.service
+  systemctl stop dnscrypt-proxy.service
+fi
+
 cp -r etc/* /etc
 cp -r usr/* /usr
 
-docker network remove pihole-bridge || true
+docker network remove pihole-bridge
 docker network create --subnet 172.20.10.0/29 pihole-bridge
 
 systemctl daemon-reload

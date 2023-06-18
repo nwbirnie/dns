@@ -1,7 +1,7 @@
 #!/bin/bash
 
 docker run --rm \
-  --name dnscrypt-proxy \
+  --name dnscrypt \
   --network pihole-bridge \
   --ip 172.20.10.3 \
   -p 5353:5353/udp \
